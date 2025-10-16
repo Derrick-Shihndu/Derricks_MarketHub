@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MarketHub</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/account.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'accounts:login' %}">🔑 Sign In</a> |
+        <a href="{% url 'accounts:signup' %}">📝 Sign Up</a> |
+        <a href="{% url 'accounts:username_reset' %}">🔐 Forgot Username</a> |
+        <a href="{% url 'shop:product_list' %}">←🏠 Back to Home</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

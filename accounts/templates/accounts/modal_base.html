@@ -1,0 +1,12 @@
+{% load static %}
+{% extends 'accounts/base.html' %}
+<div class="modal-overlay">
+    <div class="modal-content">
+        {% block modal_title %}{% endblock %}
+        <form method="post">
+            {% csrf_token %}
+            {% block modal_form %}{% endblock %}
+            <button type="submit" class="btn-login">Submit</button>
+        </form>
+    </div>
+</div>

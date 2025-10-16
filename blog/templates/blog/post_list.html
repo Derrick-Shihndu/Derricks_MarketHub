@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Blog | Derrick's MarketHub{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Latest Blog Posts</h1>
+
+{% for post in posts %}
+  <div class="card mb-3 p-3 shadow-sm d-flex flex-row align-items-center">
+    
+    {% if post.image %}
+      <img src="{{ post.image.url }}" 
+           alt="{{ post.title }}" 
+           class="img-thumbnail me-3"
+           style="width: 180px; height: 120px; object-fit: cover;">
+    {% endif %}
+    
+    <div>
+      <h3>{{ post.title }}</h3>
+      <p class="text-muted">
+        By {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}
+      </p>
+      <p>{{ post.content|truncatechars:200 }}</p>
+      <a href="{% url 'blog:post_detail' pk=post.pk %}" class="btn btn-outline-success btn-sm">
+        Read More
+      </a>
+    </div>
+  </div>
+{% empty %}
+  <p>No blog posts yet. Check back later!</p>
+{% endfor %}
+{% endblock %}

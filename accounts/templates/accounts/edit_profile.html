@@ -1,0 +1,15 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="popup-overlay">
+  <div class="popup-form">
+    <h2>Edit Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn-submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

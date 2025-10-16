@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Checkout | Derrick's MarketHub{% endblock %}
+
+{% block content %}
+<!-- <div class="checkout-container">
+    <h2 class="text-center mb-4 text-primary fw-bold">🧾 Checkout</h2>
+    <hr>
+
+    {% if message %}
+        <div class="alert alert-success text-center shadow-sm">
+            {{ message }}
+        </div>
+    {% elif error %}
+        <div class="alert alert-danger text-center shadow-sm">
+            {{ error }}
+        </div>
+    {% else %}
+        <div class="processing-box text-center p-4 bg-light shadow-sm rounded">
+            <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Processing your order, please wait...</p>
+        </div>
+    {% endif %}
+</div> -->
+<div class="checkout-container text-center p-4">
+    {% if message %}
+        <div class="alert alert-info shadow-sm">
+            {{ message|linebreaks }}
+        </div>
+        <a href="{% url 'shop:product_list' %}" class="btn btn-primary mt-3">⬅ Back to Home</a>
+    {% elif error %}
+        <div class="alert alert-danger shadow-sm">
+            {{ error }}
+        </div>
+        <a href="{% url 'cart:cart_detail' %}" class="btn btn-secondary mt-3">⬅ Back to Cart</a>
+    {% endif %}
+</div>
+
+{% endblock %}

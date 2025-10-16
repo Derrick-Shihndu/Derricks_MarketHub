@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="profile-container">
+    <h2 class="profile-title">Your Profile</h2>
+    
+    {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" alt="Avatar" class="profile-avatar">
+    {% endif %}
+    
+    <ul class="profile-info">
+        <li><strong>Username:</strong> {{ user.username }}</li>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        {% if user.profile.phone_number %}
+            <li><strong>Phone:</strong> {{ user.profile.phone_number }}</li>
+        {% endif %}
+        {% if user.profile.bio %}
+            <li><strong>Bio:</strong> {{ user.profile.bio }}</li>
+        {% endif %}
+    </ul>
+    
+    <a href="{% url 'accounts:edit_profile' %}" class="btn-submit" style="text-align:center; display:block; margin-top:20px;">Edit Profile</a>
+</div>
+{% endblock %}

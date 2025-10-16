@@ -1,0 +1,81 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #090809; /* soft light blue instead of white */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #1e3a8a; /* deep blue */
+}
+
+.navbar h1 a {
+    text-decoration: none;
+    color: #fcd34d; /* bright yellow */
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #f3f4f6 !important; /* light gray for links */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fcd34d !important; /* bright yellow on hover */
+}
+
+/* Auth buttons styling */
+.navbar-nav .text-danger {
+    font-weight: 500;
+}
+
+/* Container for page content */
+.container.mt-4 {
+    padding: 2rem 0;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1e3a8a; /* same as navbar for consistency */
+    color: #f3f4f6;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Cards styling */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background-color: #fff; /* cards stay white for contrast */
+}
+
+/* Links inside cards */
+.card a {
+    text-decoration: none;
+    color: #1e3a8a;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons styling */
+.btn-primary {
+    background-color: #fcd34d;
+    border: none;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #eab308;
+    color: #fff;
+}

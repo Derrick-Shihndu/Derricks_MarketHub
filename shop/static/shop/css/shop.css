@@ -1,0 +1,116 @@
+/* General layout */
+body {
+    background-color: #f8f9fa;
+    font-family: "Poppins", sans-serif;
+    color: #212529;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #f1faee !important;
+    font-size: 1.4rem;
+}
+
+.nav-link {
+    color: #f1faee !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #a8dadc !important;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #f1faee;
+    padding: 15px;
+    border-top: 3px solid #4ca1af;
+}
+
+/* Product cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    color: #1d3557;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #457b9d;
+    border-color: #457b9d;
+}
+
+.btn-primary:hover {
+    background-color: #1d3557;
+    border-color: #1d3557;
+}
+
+/* Empty message */
+p {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+}
+/* Product Detail Page */
+.product-detail {
+    margin-top: 40px;
+    align-items: center;
+}
+
+.product-detail img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.placeholder-img {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.product-title {
+    font-weight: 700;
+    color: #1d3557;
+}
+
+.product-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+.btn-success {
+    background-color: #2a9d8f;
+    border-color: #2a9d8f;
+}
+
+.btn-success:hover {
+    background-color: #21867a;
+    border-color: #21867a;
+}
+.site-logo {
+    border-radius: 50px;
+    width: 50px;     /* sets the width */
+    height: 50px;    /* sets the height */
+    object-fit: cover;  /* keeps the image from stretching */
+    vertical-align: middle; /* aligns with the text */
+    margin-right: 10px;     /* space between logo and title */
+}
+

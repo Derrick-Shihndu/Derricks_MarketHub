@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm p-4 mb-4">
+    <h2>{{ post.title }}</h2>
+    <p class="text-muted">{{ post.created_at|date:"F j, Y" }}</p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" 
+             class="img-fluid rounded mb-3" style="max-height: 400px; object-fit: cover;">
+    {% endif %}
+    <p>{{ post.content }}</p>
+</div>
+
+<h4>💬 Comments</h4>
+
+{% for comment in comments %}
+  <div class="card mt-3 ms-2 p-3">
+    <strong>{{ comment.author }}</strong> said:
+    <p>{{ comment.content }}</p>
+    <form method="post" class="mt-2 ms-3">
+      {% csrf_token %}
+      <input type="hidden" name="parent_id" value="{{ comment.id }}">
+      <textarea class="form-control" name="content" rows="2" placeholder="Reply..."></textarea>
+      <button type="submit" class="btn btn-sm btn-outline-primary mt-2">Reply</button>
+    </form>
+
+    {% for reply in comment.replies.all %}
+      <div class="card ms-5 mt-2 p-2 bg-light">
+        <strong>{{ reply.author }}</strong> replied:
+        <p>{{ reply.content }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+<hr>
+<h5>Add a Comment</h5>
+<form method="post">
+  {% csrf_token %}
+  <textarea name="content" class="form-control" rows="3" placeholder="Add your comment..."></textarea>
+  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+{% endblock %}
