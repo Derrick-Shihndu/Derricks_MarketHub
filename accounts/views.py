@@ -14,7 +14,8 @@ def signup_view(request):
             user.set_password(form.cleaned_data['password1'])
             user.save()
             # Create profile automatically
-            Profile.objects.create(user=user)
+            Profile.objects.get_or_create(user=user)
+
             login(request, user)
             return redirect('accounts:profile')
     else:
@@ -38,12 +39,6 @@ def logout_view(request):
     logout(request)
     return redirect('accounts:login')
 
-# Profile view
-@login_required
-def profile_view(request):
-    profile = Profile.objects.get(user=request.user)
-    return render(request, 'accounts/profile.html', {'profile': profile})
-
 # Username reset view
 def username_reset_view(request):
     if request.method == "POST":
@@ -55,11 +50,12 @@ def username_reset_view(request):
     return render(request, 'accounts/username_reset.html', {'form': form})
 @login_required
 def profile_view(request):
-    # Automatically create a profile if it doesn't exist
     profile, created = Profile.objects.get_or_create(
-    user=request.user,
-    defaults={'bio': ''}
-)
+        user=request.user,
+        defaults={'bio': ''}
+    )
+    return render(request, 'accounts/profile.html', {'profile': profile})
+
 
     return render(request, 'accounts/profile.html', {'profile': profile})
 @login_required
