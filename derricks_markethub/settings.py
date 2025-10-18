@@ -46,7 +46,7 @@ SECRET_KEY = 'django-insecure-e#0og^i42)#qll$0h=8zztr30v*uzf4j$%63=s0-k^lton9_u#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOST = ['']
+ALLOWED_HOSTS = ['derricks-markethub-1.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
