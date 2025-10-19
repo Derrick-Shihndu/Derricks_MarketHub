@@ -13,3 +13,9 @@ typing_extensions==4.15.0
 tzdata==2025.2
 urllib3==2.5.0
 whitenoise==6.11.0
+stripe==13.0.1
+tzdata==2025.2
+urllib3==2.5.0
+whitenoise==6.11.0
+dj-database-url
+psycopg2-binary
