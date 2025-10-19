@@ -114,7 +114,6 @@ DATABASES = {
         ssl_require=True
     )
 }
-s
 
 
 # Password validation
