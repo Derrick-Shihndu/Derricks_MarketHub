@@ -105,12 +105,16 @@ WSGI_APPLICATION = 'derricks_markethub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://derricks_markethub_db_user:XJ2VEAeC8aOUOyeRrPwV1kCYksrUbaRl@dpg-d3qb6b49c44c73ckcifg-a.virginia-postgres.render.com/derricks_markethub_db',
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
+s
 
 
 # Password validation
