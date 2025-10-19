@@ -24,7 +24,7 @@ def edit_comment(request, pk):
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
-
+@login_required
 def post_detail(request, pk):
     post = get_object_or_404(Post, id=pk)
     comments = post.comments.filter(parent__isnull=True)
@@ -46,11 +46,11 @@ def post_detail(request, pk):
         'post': post,
         'comments': comments
     })
-
+@login_required
 def post_list(request):
     posts = Post.objects.all().order_by('-created_at')
     return render(request, 'blog/post_list.html', {'posts': posts})
-
+@login_required
 def post_list(request):
     query = request.GET.get('q')  # Get search query
     if query:
